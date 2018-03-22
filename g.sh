@@ -9,8 +9,12 @@ _g () {
   eval $p 
  elif [ "$arg" = "c" ]; then
   msg=$2
-  cmd="git add --all && git commit -m '$msg'"
-  eval $cmd 
+  if [ "$msg" ]; then
+   cmd="git add --all && git commit -m '$msg'"
+   eval $cmd
+  else
+   echo "Please provide a commit message"
+  fi
  else
   echo 'wow not found' 
  fi
