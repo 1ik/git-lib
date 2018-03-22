@@ -7,6 +7,7 @@ _g () {
  if [ "$arg" = "p" ]; then
   p="git push -u origin $branch"  
   eval $p 
+ 
  elif [ "$arg" = "c" ]; then
   msg=$2
   if [ "$msg" ]; then
@@ -15,6 +16,11 @@ _g () {
   else
    echo "Please provide a commit message"
   fi
+
+ elif [ "$arg" = "l" ]; then
+  p="git pull origin $branch"
+  eval $p
+
  else
   echo 'wow not found' 
  fi
