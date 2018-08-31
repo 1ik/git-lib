@@ -6,7 +6,7 @@ _g () {
 
  if [ "$arg" = "p" ]; then
   p="git push -u origin $branch"  
-  eval $p 
+  eval $p
  
  elif [ "$arg" = "c" ]; then
   msg=$2
@@ -19,6 +19,10 @@ _g () {
 
  elif [ "$arg" = "l" ]; then
   p="git pull origin $branch"
+  eval $p
+
+ elif [ "$arg" = "sync" ]; then
+  p="git fetch origin && git reset origin/$branch --hard"
   eval $p
 
  else
