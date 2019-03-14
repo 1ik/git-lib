@@ -25,6 +25,11 @@ _g () {
   p="git fetch origin && git reset origin/$branch --hard"
   eval $p
 
+ elif [ "$arg" = "wip" ]; then
+  p="git add --all && git commit -m 'WIP' && g p"
+  eval $p
+
+
  else
   echo 'wow not found' 
  fi
