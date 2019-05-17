@@ -29,6 +29,12 @@ _g () {
   p="git add --all && git commit -m 'WIP' && g p"
   eval $p
 
+ elif [ "$arg" = "update" ]; then
+  msg=$(git log -1 --pretty=%B);
+  commit="git add --all && git commit --amend -m '$msg'"
+  eval $commit;
+  push=$(git push -u origin $branch -f)
+  eval $push;
 
  else
   echo 'wow not found' 
