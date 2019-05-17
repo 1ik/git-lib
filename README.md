@@ -13,4 +13,3 @@ Clone the repository and put the line `. /path/to/git-lib/g.sh` anywhere in your
 ### Supported OS
 - macos
 - linux
-b
